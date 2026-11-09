@@ -1,0 +1,11 @@
+{
+  "name": "|? -> name|",
+  "username": "|? -> user_name|",
+  "email": "|? -> email|",
+  "phone": "|? -> phone_number|",
+  "password": "123456",
+  "country": "Spain",
+  "sponsor": "Rojo",
+  "website": "",
+  "sourceUrl": ""
+}
