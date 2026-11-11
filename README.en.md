@@ -6,7 +6,7 @@ A testing tool that sends multiple `POST` requests with synthetic data to a regi
 
 ## How it works
 
-`exploit.py` reads `template.json` and creates a fresh payload for each request. Values in the form `|? -> provider|` are replaced with data from [Faker](https://faker.readthedocs.io/); other values are sent as written. Replacement also works inside nested objects and arrays. For example:
+`main.py` reads `template.json` and creates a fresh payload for each request. Values in the form `|? -> provider|` are replaced with data from [Faker](https://faker.readthedocs.io/); other values are sent as written. Replacement also works inside nested objects and arrays. For example:
 
 ```json
 {
@@ -28,7 +28,7 @@ Requires Python 3 and a local test server with the target endpoint available.
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install -r requirements.txt
-python3 exploit.py --host http://127.0.0.1:8000 --endpoint /api/auth/register --count 10 --workers 2
+python3 main.py --host http://127.0.0.1:8000 --endpoint /api/auth/register --count 10 --workers 2
 ```
 
 Before running the script, edit `template.json` to match the fields accepted by your API. Available options:

@@ -6,7 +6,7 @@ Herramienta de prueba para enviar múltiples solicitudes `POST` con datos sinté
 
 ## Funcionamiento
 
-El script `exploit.py` lee `template.json` y genera una carga nueva para cada solicitud. Los valores con la forma `|? -> proveedor|` se sustituyen por datos de [Faker](https://faker.readthedocs.io/); los demás valores se envían tal como aparecen en la plantilla. El reemplazo también funciona dentro de objetos y listas anidados. Por ejemplo:
+El script `main.py` lee `template.json` y genera una carga nueva para cada solicitud. Los valores con la forma `|? -> proveedor|` se sustituyen por datos de [Faker](https://faker.readthedocs.io/); los demás valores se envían tal como aparecen en la plantilla. El reemplazo también funciona dentro de objetos y listas anidados. Por ejemplo:
 
 ```json
 {
@@ -28,7 +28,7 @@ Requiere Python 3 y un servidor de pruebas local con el endpoint correspondiente
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install -r requirements.txt
-python3 exploit.py --host http://127.0.0.1:8000 --endpoint /api/auth/register --count 10 --workers 2
+python3 main.py --host http://127.0.0.1:8000 --endpoint /api/auth/register --count 10 --workers 2
 ```
 
 Antes de ejecutar, adapta `template.json` a los campos que acepta tu API. Las opciones disponibles son:
