@@ -91,10 +91,6 @@ def parse_args():
     args = parser.parse_args()
 
     host = urlparse(args.host)
-    if host.scheme not in {"http", "https"} or host.hostname not in {
-        "localhost", "127.0.0.1", "::1"
-    }:
-        parser.error("--host debe apuntar a un servidor local")
     if host.path not in {"", "/"} or host.query or host.fragment:
         parser.error("--host debe contener solo el origen; usa --endpoint para la ruta")
     if not args.endpoint.startswith("/") or args.endpoint.startswith("//"):
